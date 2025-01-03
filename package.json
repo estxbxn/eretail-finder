@@ -1,0 +1,16 @@
+{
+  "name": "retail-class-detector",
+  "version": "1.0.0",
+  "description": "Chrome extension to detect specific classes on e-commerce sites.",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --config webpack.config.cjs",
+    "watch": "webpack --config webpack.config.cjs --watch"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.2.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

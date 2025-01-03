@@ -4,6 +4,7 @@ import { IntermarcheObserver } from "./observers/impl/IntermarcheObserver";
 import { LeclercObserver } from "./observers/impl/LeclercObserver";
 import { SuperUObserver } from "./observers/impl/SuperUObserver";
 import { IObserver } from "./observers/IObserver";
+import './styles/warningBanner.css';
 
 /**
  * Initializes and starts all observers.

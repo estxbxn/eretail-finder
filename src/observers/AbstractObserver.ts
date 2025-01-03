@@ -73,22 +73,15 @@ export abstract class AbstractObserver implements IObserver {
      */
     private displayWarning(name: string, selector: string): void {
         console.log(`Element detected: ${name} (${selector})`);
-        const warningBanner: HTMLDivElement = document.createElement("div");
-        warningBanner.textContent = `Warning: '${name}' detected with selector '${selector}'.`;
-        warningBanner.style.position = "fixed";
-        warningBanner.style.top = "0";
-        warningBanner.style.left = "0";
-        warningBanner.style.width = "100%";
-        warningBanner.style.backgroundColor = "red";
-        warningBanner.style.color = "white";
-        warningBanner.style.fontSize = "16px";
-        warningBanner.style.textAlign = "center";
-        warningBanner.style.padding = "10px";
-        warningBanner.style.zIndex = "9999";
+        const elements: NodeListOf<HTMLDivElement> = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            const warningBanner: HTMLDivElement = document.createElement("div");
+            warningBanner.textContent = `Warning: '${name}' detected here.`;
+            warningBanner.className = "warning-banner";
 
-        if (!document.body.contains(warningBanner)) {
-            document.body.appendChild(warningBanner);
-        }
+            element.appendChild(warningBanner);
+            element.style.position = "relative";
+        });
     }
 
     /**
